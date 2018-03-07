@@ -10,7 +10,7 @@ namespace Piwik\Plugins\DeviceNetworkInformation\Reports;
 
 use Piwik\Piwik;
 use Piwik\Plugin\ViewDataTable;
-use Piwik\Plugins\DeviceNetworkInformation\Columns\DeviceNetworkType;
+use Piwik\Plugins\DeviceNetworkInformation\Columns\DeviceNetworkEffectiveType;
 
 class GetNetworkEffectiveType extends Base
 {
@@ -20,7 +20,7 @@ class GetNetworkEffectiveType extends Base
         $this->dimension     = new DeviceNetworkEffectiveType();
         $this->name          = Piwik::translate('DeviceNetworkInformation_DeviceNetworkEffectiveType');
         $this->documentation = ''; // TODO
-        $this->order = 4;
+        $this->order = 12;
         $this->hasGoalMetrics = true;
         $this->subcategoryId = 'DevicesDetection_Devices';
     }

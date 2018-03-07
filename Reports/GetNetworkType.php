@@ -20,7 +20,7 @@ class GetNetworkType extends Base
         $this->dimension     = new DeviceNetworkType();
         $this->name          = Piwik::translate('DeviceNetworkInformation_DeviceNetworkType');
         $this->documentation = ''; // TODO
-        $this->order = 4;
+        $this->order = 11;
         $this->hasGoalMetrics = true;
         $this->subcategoryId = 'DevicesDetection_Devices';
     }
