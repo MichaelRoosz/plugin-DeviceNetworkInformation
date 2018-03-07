@@ -19,10 +19,17 @@
     function init() {
         Piwik.addPlugin("DeviceNetworkInformation", {
             log: function() {
-                if (typeof navigator.connection !== 'undefined' && typeof navigator.connection.type !== 'undefined') {
-                    return "&networktype=" + encodeURIComponent(navigator.connection.type)
+                
+                try {
+                    if (typeof navigator.connection !== 'undefined' && typeof navigator.connection.type !== 'undefined') {
+                        return "&networktype=" + encodeURIComponent(navigator.connection.type)
+                    }
+                    return "&networktype=unknown"
+                    
+                } catch(e) {
+                    
+                    return "&networktype=unknown"
                 }
-                return "&networktype=unknown"
             }
         })
     }
