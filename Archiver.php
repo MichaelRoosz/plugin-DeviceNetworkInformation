@@ -15,17 +15,22 @@ use Piwik\Metrics;
 class Archiver extends \Piwik\Plugin\Archiver
 {
     const NETWORK_TYPE_RECORD_NAME = 'DeviceNetworkInformation_networkTypes';
-    const NETWORK_TYPE_FIELD = "config_device_networktype";
+    const NETWORK_TYPE_FIELD = "config_device_nwtype";
+
+    const NETWORK_EFFECTIVE_TYPE_RECORD_NAME = 'DeviceNetworkInformation_networkEffectiveTypes';
+    const NETWORK_EFFECTIVE_TYPE_FIELD = "config_device_nwefftype";
 
     public function aggregateDayReport()
     {
         $this->aggregateByLabel(self::NETWORK_TYPE_FIELD, self::NETWORK_TYPE_RECORD_NAME);
+        $this->aggregateByLabel(self::NETWORK_EFFECTIVE_TYPE_FIELD, self::NETWORK_EFFECTIVE_TYPE_RECORD_NAME);
     }
 
     public function aggregateMultipleReports()
     {
         $dataTablesToSum = array(
             self::NETWORK_TYPE_RECORD_NAME,
+            self::NETWORK_EFFECTIVE_TYPE_RECORD_NAME,
         );
 
         $columnsAggregationOperation = null;

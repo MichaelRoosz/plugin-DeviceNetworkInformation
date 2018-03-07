@@ -54,4 +54,20 @@ class API extends \Piwik\Plugin\API
         $dataTable->filter('AddSegmentByLabel', array('deviceNetworkType'));
         return $dataTable;
     }
+    
+    /**
+     * Gets datatable displaying number of visits by device network effective type
+     * @param int $idSite
+     * @param string $period
+     * @param string $date
+     * @param bool|string $segment
+     * @return DataTable
+     */
+    public function getNetworkEffectiveType($idSite, $period, $date, $segment = false)
+    {
+        $dataTable = $this->getDataTable('DeviceNetworkInformation_networkEffectiveTypes', $idSite, $period, $date, $segment);
+        //$dataTable->filter('GroupBy', array('label', __NAMESPACE__ . '\getDeviceNetworkEffectiveTypeLabel'));
+        $dataTable->filter('AddSegmentByLabel', array('deviceNetworkEffectiveType'));
+        return $dataTable;
+    }
 }

@@ -14,24 +14,21 @@ use Piwik\Tracker\Visitor;
 use Piwik\Tracker\Action;
 use Piwik\Plugin\Dimension\VisitDimension;
 
-class DeviceNetworkType extends VisitDimension
+class DeviceNetworkEffectiveType extends VisitDimension
 {
-    protected $columnName = 'config_device_nwtype';
+    protected $columnName = 'config_device_nwefftype';
     protected $columnType = 'VARCHAR( 10 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL';
     protected $type = self::TYPE_TEXT;
-    protected $nameSingular = 'DeviceNetworkInformation_DeviceNetworkType';
-    protected $namePlural = 'DeviceNetworkInformation_DeviceNetworkTypes';
+    protected $nameSingular = 'DeviceNetworkInformation_DeviceNetworkEffectiveType';
+    protected $namePlural = 'DeviceNetworkInformation_DeviceNetworkEffectiveType';
     protected $segmentName = 'deviceNetworkType';
-    protected $acceptValues = 'bluetooth, cellular, ethernet, none, wifi, wimax, other, unknown';
-
-    protected static $validNetworkTypes = array(
-        'bluetooth' => true,
-        'cellular' => true,
-        'ethernet' => true,
-        'none' => true,
-        'wifi' => true,
-        'wimax' => true,
-        'other' => true,
+    protected $acceptValues = 'slow-2g, 2g, 3g, 4g, unknown';
+    
+    protected static $validNetworkEffectiveTypes = array(
+        'slow-2g' => true,
+        '2g' => true,
+        '3g' => true,
+        '4g' => true,
         'unknown' => true
     );
 
@@ -43,13 +40,13 @@ class DeviceNetworkType extends VisitDimension
      */
     public function onNewVisit(Request $request, Visitor $visitor, $action)
     {
-        $networkType = strtolower(Common::getRequestVar('nwtype', 'unknown', 'string', $request->getParams()));
+        $networkEffectiveType = strtolower(Common::getRequestVar('nwefftype', 'unknown', 'string', $request->getParams()));
         
-        if (empty($networkType) || !isset(self::$validNetworkTypes[$networkType])) {
-            $networkType = 'unknown';
+        if (empty($networkEffectiveType) || !isset(self::$validNetworkEffectiveTypes[$networkEffectiveType])) {
+            $networkEffectiveType = 'unknown';
         }
         
-        return $networkType;
+        return $networkEffectiveType;
     }
 
     /**

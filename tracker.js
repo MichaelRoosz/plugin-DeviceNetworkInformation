@@ -20,16 +20,25 @@
         Piwik.addPlugin("DeviceNetworkInformation", {
             log: function() {
                 
+                var ret = '';
+                
                 try {
-                    if (typeof navigator.connection !== 'undefined' && typeof navigator.connection.type !== 'undefined') {
-                        return "&networktype=" + encodeURIComponent(navigator.connection.type)
-                    }
-                    return "&networktype=unknown"
-                    
+                    if (typeof navigator.connection !== 'undefined') {
+                        
+                        if (typeof navigator.connection.type !== 'undefined') {
+                            ret += "&nwtype=" + encodeURIComponent(navigator.connection.type);
+                        }
+                        
+                        if (typeof navigator.connection.effectiveType !== 'undefined') {
+                            ret += "&nwefftype=" + encodeURIComponent(navigator.connection.effectiveType);
+                        }
+                    }                    
                 } catch(e) {
                     
-                    return "&networktype=unknown"
+                    ret = '';
                 }
+                    
+                return ret;
             }
         })
     }

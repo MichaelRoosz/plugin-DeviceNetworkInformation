@@ -16,14 +16,5 @@ use Piwik\Plugin;
  */
 class DeviceNetworkInformation extends Plugin
 {
-    /**
-     * @see Plugin::registerEvents
-     */
-    public function registerEvents()
-    {
-        return array(
-                
-        );
-    }
 
 }

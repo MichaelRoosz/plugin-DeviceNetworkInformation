@@ -1,6 +1,10 @@
 {
     "DeviceNetworkInformation": {
         "dataTableLabelNetworkTypes": "Network Types",
-        "DeviceNetworkType": "Device network type"
+        "dataTableLabelNetworkEffectiveTypes": "Effective Network Types",
+        "DeviceNetworkType": "Device network type",
+        "DeviceNetworkEffectiveType": "Device effective network type",
+        "DeviceNetworkTypes": "Device network types",
+        "DeviceNetworkEffectiveTypes": "Device effective network types"
     }
 }
