@@ -20,8 +20,8 @@ class DeviceNetworkEffectiveType extends VisitDimension
     protected $columnType = 'VARCHAR( 10 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL';
     protected $type = self::TYPE_TEXT;
     protected $nameSingular = 'DeviceNetworkInformation_DeviceNetworkEffectiveType';
-    protected $namePlural = 'DeviceNetworkInformation_DeviceNetworkEffectiveType';
-    protected $segmentName = 'deviceNetworkType';
+    protected $namePlural = 'DeviceNetworkInformation_DeviceNetworkEffectiveTypes';
+    protected $segmentName = 'deviceNetworkEffectiveType';
     protected $acceptValues = 'slow-2g, 2g, 3g, 4g, unknown';
     
     protected static $validNetworkEffectiveTypes = array(
