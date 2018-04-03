@@ -23,16 +23,18 @@
                 var ret = '';
                 
                 try {
-                    if (typeof navigator.connection !== 'undefined') {
+                    var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+                    
+                    if (typeof connection !== 'undefined') {
                         
-                        if (typeof navigator.connection.type !== 'undefined') {
-                            ret += "&nwtype=" + encodeURIComponent(navigator.connection.type);
+                        if (typeof connection.type !== 'undefined') {
+                            ret += "&nwtype=" + encodeURIComponent(connection.type);
                         }
                         
-                        if (typeof navigator.connection.effectiveType !== 'undefined') {
-                            ret += "&nwefftype=" + encodeURIComponent(navigator.connection.effectiveType);
+                        if (typeof connection.effectiveType !== 'undefined') {
+                            ret += "&nwefftype=" + encodeURIComponent(connection.effectiveType);
                         }
-                    }                    
+                    }
                 } catch(e) {
                     
                     ret = '';
