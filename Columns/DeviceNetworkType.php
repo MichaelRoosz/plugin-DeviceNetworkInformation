@@ -17,7 +17,8 @@ use Piwik\Plugin\Dimension\VisitDimension;
 class DeviceNetworkType extends VisitDimension
 {
     protected $columnName = 'config_device_nwtype';
-    protected $columnType = 'VARCHAR( 10 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL';
+    protected $columnType = 'ENUM(\'bluetooth\', \'cellular\', \'ethernet\', \'none\', \'wifi\', \'wimax\', \'other\', \'unknown\')'
+                            . ' NULL DEFAULT NULL';
     protected $type = self::TYPE_TEXT;
     protected $nameSingular = 'DeviceNetworkInformation_DeviceNetworkType';
     protected $namePlural = 'DeviceNetworkInformation_DeviceNetworkTypes';

@@ -17,7 +17,7 @@ use Piwik\Plugin\Dimension\VisitDimension;
 class DeviceNetworkEffectiveType extends VisitDimension
 {
     protected $columnName = 'config_device_nwefftype';
-    protected $columnType = 'VARCHAR( 10 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL';
+    protected $columnType = 'ENUM(\'slow-2g\', \'2g\', \'3g\', \'4g\', \'unknown\') NULL DEFAULT NULL';
     protected $type = self::TYPE_TEXT;
     protected $nameSingular = 'DeviceNetworkInformation_DeviceNetworkEffectiveType';
     protected $namePlural = 'DeviceNetworkInformation_DeviceNetworkEffectiveTypes';
