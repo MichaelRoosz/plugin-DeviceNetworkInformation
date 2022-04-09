@@ -1,19 +1,18 @@
 {
     "name": "DeviceNetworkInformation",
     "license": "GPL v3+",
-    "homepage": "https:\/\/github.com\/MichaelHeerklotz\/plugin-DeviceNetworkInformation",
+    "homepage": "https:\/\/github.com\/MichaelRoosz\/plugin-DeviceNetworkInformation",
     "authors": [
         {
-            "name": "Michael Heerklotz",
-            "email": "michael.heerklotz@web.de",
-            "homepage": "https:\/\/www.5hd.de"
+            "name": "Michael Roosz",
+            "email": "michael.roosz@web.de"
         }
     ],
     "description": "Detects network type on mobile devices where the browser supports it.",
-    "version": "3.0.3",
+    "version": "4.0.1",
     "theme": false,
     "require": {
-        "piwik": ">=3.1.0-rc1,<4.0.0-b1"
+        "matomo": ">=4.0.0-b1,<5.0.0-b1"
     },
     "keywords": [
         "network",
@@ -21,6 +20,6 @@
         "mobile"
     ],
     "donate": {
-        "paypal": "michael.heerklotz@web.de"
+        "paypal": "michael.roosz@web.de"
     }
 }

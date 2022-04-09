@@ -15,11 +15,13 @@ GPL v3 or later
 
 ## Changelog
 
+4.0.1: Compatibility with Matomo 4
+
 3.0.3: First stable release
 
 ## Support
 
-Feel free to file an issue at https://github.com/MichaelHeerklotz/plugin-DeviceNetworkInformation/issues .
+Feel free to file an issue at https://github.com/MichaelRoosz/plugin-DeviceNetworkInformation/issues .
 
 ## Contribute
 
