@@ -15,6 +15,8 @@ GPL v3 or later
 
 ## Changelog
 
+5.0.1: Compatibility with Matomo 5
+
 4.0.1: Compatibility with Matomo 4
 
 3.0.3: First stable release
